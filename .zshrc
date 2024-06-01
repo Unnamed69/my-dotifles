@@ -82,7 +82,8 @@ alias rm='rm -I'
 alias mv='mv -iv'
 alias ln='ln -sriv'
 alias xclip='xclip -selection c'
-command -v vim > /dev/null && alias vi='vim'
+command -v vim > /dev/null && alias vi='nvim'
+command -v vim > /dev/null && alias vim='nvim'
 
 ### Colorize commands
 alias ls='ls --color=auto'
@@ -189,7 +190,7 @@ _fzf_comprun() {
 	esac
 }
 export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
-export BAT_THEME=tokyonight_night
+export BAT_THEME=ansi
 # Shell integrations
 . $HOME/.asdf/asdf.sh
 eval "$(fzf --zsh)"
