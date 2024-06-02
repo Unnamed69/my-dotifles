@@ -133,10 +133,12 @@ alias dockerrm='docker rm $(docker ps -qa)'
 alias dockerstop='docker stop $(docker ps -qa)'
 alias startmongodb='docker run -p 27017:27017 -v ~/mongodb-data:/data/db -d mongo'
 alias startredis='docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest'
-alias startmysql=''
+alias startmysql='docker run --name mysql-container -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mysql -d mysql'
 alias startpgsql='docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres:15'
 alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
+alias dl='docker logs -f'
+command -v docker-compose > /dev/null && alias docker compose='/usr/bin/docker compose'
 dcuf() {
     docker-compose -f "$1" up -d
 }
