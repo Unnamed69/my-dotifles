@@ -26,7 +26,7 @@ fi
 
 # Automatically attach tmux to "main" session
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux new-session -A -s main
+  tmux a -t main || exec tmux new -s main && exit;
 fi
 
 # Source/Load zinit
@@ -124,7 +124,7 @@ command -v batcat > /dev/null && \
 command -v bpytop > /dev/null && alias top='bpytop'
 command -v df > /dev/null && alias df='duf'
 command -v ps > /dev/null && alias ps='/home/linuxbrew/.linuxbrew/bin/procs'
-command -v curl > /dev/null && alias curl='/opt/homebrew/bin/curlie'
+command -v curl > /dev/null && alias curl='/home/linuxbrew/.linuxbrew/bin/curlie'
 command -v apt > /dev/null && alias apt='nala'
 alias obs='flatpak run com.obsproject.Studio'
 alias ld=/bin/ld
