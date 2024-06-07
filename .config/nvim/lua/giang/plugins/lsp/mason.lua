@@ -30,7 +30,6 @@ return {
         "tsserver",
         "html",
         "cssls",
-        "tailwindcss",
         "svelte",
         "lua_ls",
         "graphql",
@@ -44,6 +43,7 @@ return {
         "sqlls",
         "helm_ls",
         "terraformls",
+        "eslint",
       },
     })
 
@@ -54,8 +54,9 @@ return {
         "isort", -- python formatter
         "black", -- python formatter
         "pylint",
-        "eslint_d",
         "sql-formatter",
+        "eslint_d",
+        "php-cs-fixer",
       },
     })
   end,

@@ -14,6 +14,7 @@ return {
       highlight = {
         enable = true,
       },
+      auto_install = true,
       -- enable indentation
       indent = { enable = true },
       -- enable autotagging (w/ nvim-ts-autotag plugin)
@@ -42,6 +43,7 @@ return {
         "query",
         "vimdoc",
         "c",
+        "elixir",
       },
       incremental_selection = {
         enable = true,
