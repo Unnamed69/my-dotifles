@@ -57,6 +57,7 @@ return {
         "sql-formatter",
         "eslint_d",
         "php-cs-fixer",
+        "lemminx",
       },
     })
   end,
