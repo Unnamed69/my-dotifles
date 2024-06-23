@@ -89,6 +89,7 @@ alias ln='ln -sriv'
 alias xclip='xclip -selection c'
 command -v vim > /dev/null && alias vi='nvim'
 command -v vim > /dev/null && alias vim='nvim'
+command -v neofetch > /dev/null && alias neofetch='fastfetch -c ~/.config/fastfetch/10.jsonc'
 
 ### Colorize commands
 alias ls='ls --color=auto'
