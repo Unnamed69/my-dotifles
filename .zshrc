@@ -111,7 +111,7 @@ command -v colorls > /dev/null && alias ls='colorls --sd --gs' && \
 
 command -v bat > /dev/null && \
 	alias bat='bat --theme=ansi' && \
-	alias cat='bat --pager=never' && \
+	alias cat='bat' && \
 	alias less='bat'
 command -v batcat > /dev/null && \
 	alias batcat='batcat --theme=ansi' && \
