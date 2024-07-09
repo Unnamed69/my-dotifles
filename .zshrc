@@ -139,6 +139,9 @@ dcuf() {
     docker-compose -f "$1" up -d
 }
 
+dcdf() {
+    docker-compose -f "$1" down
+}
 #__prompt_to_bottom_line() {
 #  tput cup $LINES
 #}
