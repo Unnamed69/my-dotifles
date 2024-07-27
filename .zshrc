@@ -149,6 +149,7 @@ dcdf() {
 #__prompt_to_bottom_line
 
 alias ldocker='lazydocker'
+alias gsyncbranch="git fetch --prune && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D"
 # Exports
 export PATH=$PATH:$HOME/bin
 export PATH=/usr/bin:$PATH
