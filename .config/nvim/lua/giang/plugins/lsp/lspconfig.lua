@@ -131,6 +131,25 @@ return {
           },
         })
       end,
+      ["elixirls"] = function()
+        lspconfig["elixirls"].setup({
+          capabilities = capabilities,
+          cmd = { "elixir-ls" },
+          filetypes = { "elixir" },
+          root_dir = lspconfig.util.root_pattern("mix.exs", ".git"),
+        })
+      end,
+      ["tsserver"] = function()
+        lspconfig["tsserver"].setup({
+          capabilities = capabilities,
+          on_attach = function(client, bufnr) end,
+          init_options = {
+            preferences = {
+              disableSuggestions = true,
+            },
+          },
+        })
+      end,
     })
   end,
 }

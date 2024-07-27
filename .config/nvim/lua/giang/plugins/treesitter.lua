@@ -14,6 +14,7 @@ return {
       highlight = {
         enable = true,
       },
+      auto_install = true,
       -- enable indentation
       indent = { enable = true },
       -- enable autotagging (w/ nvim-ts-autotag plugin)
@@ -42,6 +43,7 @@ return {
         "query",
         "vimdoc",
         "c",
+        "elixir",
       },
       incremental_selection = {
         enable = true,
@@ -58,7 +60,6 @@ return {
     vim.treesitter.language.register("javascript", "ejs")
     vim.treesitter.language.register("cpp", "conf")
     vim.treesitter.language.register("cpp", "fsharp")
-    vim.filetype.add({ extension = { ypp = "ypp" } })
     vim.treesitter.language.register("cpp", "ypp")
     vim.treesitter.language.register("cpp", "lex")
   end,

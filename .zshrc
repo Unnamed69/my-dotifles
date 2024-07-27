@@ -25,7 +25,7 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 
 # Automatically attach tmux to "main" session
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
   tmux a -t main || exec tmux new -s main && exit;
 fi
 
@@ -92,8 +92,11 @@ alias rm='rm -I'
 alias mv='mv -iv'
 alias ln='ln -sriv'
 alias xclip='xclip -selection c'
+alias pip='pip3'
+alias python='python3'
 command -v vim > /dev/null && alias vi='nvim'
 command -v vim > /dev/null && alias vim='nvim'
+command -v neofetch > /dev/null && alias neofetch='fastfetch -c ~/.config/fastfetch/10.jsonc'
 
 ### Colorize commands
 alias ls='ls --color=auto'
@@ -115,7 +118,7 @@ command -v colorls > /dev/null && alias ls='colorls --sd --gs' && \
 
 command -v bat > /dev/null && \
 	alias bat='bat --theme=ansi' && \
-	alias cat='bat --pager=never' && \
+	alias cat='bat' && \
 	alias less='bat'
 command -v batcat > /dev/null && \
 	alias batcat='batcat --theme=ansi' && \
@@ -125,10 +128,7 @@ command -v bpytop > /dev/null && alias top='bpytop'
 command -v df > /dev/null && alias df='duf'
 command -v ps > /dev/null && alias ps='/home/linuxbrew/.linuxbrew/bin/procs'
 command -v curl > /dev/null && alias curl='/home/linuxbrew/.linuxbrew/bin/curlie'
-command -v apt > /dev/null && alias apt='nala'
 alias obs='flatpak run com.obsproject.Studio'
-alias ld=/bin/ld
-alias fd=/bin/fdfind
 alias dockerrm='docker rm $(docker ps -qa)'
 alias dockerstop='docker stop $(docker ps -qa)'
 alias startmongodb='docker run -p 27017:27017 -v ~/mongodb-data:/data/db -d mongo'
@@ -138,6 +138,8 @@ alias startpgsql='docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSW
 alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
 alias dl='docker logs -f'
+alias gsyncbranch="git fetch --prune && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D"
+alias ldocker='lazydocker'
 command -v docker-compose > /dev/null && alias docker compose='/usr/bin/docker compose'
 dcuf() {
     docker-compose -f "$1" up -d
@@ -149,16 +151,16 @@ dcuf() {
 #alias clear='clear && __prompt_to_bottom_line'
 #__prompt_to_bottom_line
 
-alias ldocker='lazydocker'
 # Exports
 export PATH=$PATH:$HOME/bin
 export PATH=/usr/bin:$PATH
 export PATH=$PATH:$HOME/.local/bin
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+export GTK_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export QT_IM_MODULE=fcitx
 export PATH=~/.asdf/shims:$PATH
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/FileCentipede/fileu
 # -- Use fd instead of fzf --
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
