@@ -1,0 +1,44 @@
+[user]
+	name = Giang
+	email = nguyentonggiang131294@gmail.com
+[core]	
+  editor = nvim
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true # use n and N to move between diff sections
+  side-by-side = true
+[diff]
+  colorMoved = default
+[merge]
+  conflictstyle = diff3
+[pull]
+	ff = only
+[alias]
+	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	lg = !"git lg2"
+	find = log --grep
+	export = log --no-merges --since='last 2 month' --pretty=format:'%h,%an,%ar,%s' 
+	blame1 = blame -w -C -L
+	blame2 = blame -w -C -C -L
+	blame3 = blame -w -C -C -C -L
+	forcepush = push --force-with-lease
+[rerere]
+	enabled = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[maintenance]
+  auto = false
+	strategy = incremental
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = main
