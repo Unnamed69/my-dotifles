@@ -122,6 +122,7 @@ command -v df > /dev/null && alias df='duf'
 command -v ps > /dev/null && alias ps='/home/linuxbrew/.linuxbrew/bin/procs'
 command -v curl > /dev/null && alias curl='/opt/homebrew/bin/curlie'
 command -v apt > /dev/null && alias apt='nala'
+alias docker-compose='docker compose'
 alias obs='flatpak run com.obsproject.Studio'
 alias ld=/bin/ld
 alias fd='fd --exclude .git'
@@ -134,7 +135,6 @@ alias startpgsql='docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSW
 alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
 alias dl='docker logs -f'
-command -v docker-compose > /dev/null && alias docker compose='/usr/bin/docker compose'
 dcuf() {
     docker-compose -f "$1" up -d
 }
