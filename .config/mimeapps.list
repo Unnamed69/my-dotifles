@@ -3,7 +3,25 @@ inode/directory=thunar.desktop
 text/plain=nvim.desktop
 application/x-zerosize=nvim.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
+image/png=org.kde.gwenview.desktop
+image/jpeg=org.kde.gwenview.desktop
+application/pdf=okularApplication_pdf.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-O1GXS2.desktop
+message/rfc822=userapp-Thunderbird-O1GXS2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-O1GXS2.desktop
+x-scheme-handler/webcal=userapp-Thunderbird-NH1VS2.desktop
+text/calendar=userapp-Thunderbird-NH1VS2.desktop
+application/x-extension-ics=userapp-Thunderbird-NH1VS2.desktop
+x-scheme-handler/webcals=userapp-Thunderbird-NH1VS2.desktop
+x-scheme-handler/postman=Postman.desktop
 
 [Added Associations]
 application/x-zerosize=nvim.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+image/png=org.kde.gwenview.desktop;
+image/jpeg=org.kde.gwenview.desktop;
+application/pdf=okularApplication_pdf.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-O1GXS2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-O1GXS2.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-NH1VS2.desktop;
+x-scheme-handler/webcals=userapp-Thunderbird-NH1VS2.desktop;

@@ -9,14 +9,14 @@
 scriptsDir=$HOME/.config/hypr/scripts
 wallpaper=$HOME/.config/hypr/wallpaper_effects/.wallpaper_modified
 waybar_style="$HOME/.config/waybar/style/[Wallust] Box type.css"
-kvantum_theme="Catppuccin-Mocha"
+kvantum_theme="Magna-Dark-Kvantum"
 color_scheme="prefer-dark"
 gtk_theme="Andromeda-dark"
 icon_theme="Flat-Remix-Blue-Dark"
 cursor_theme="Bibata-Modern-Ice"
 
 swww="swww img"
-effect="--transition-bezier .43,1.19,1,.4 --transition-fps 30 --transition-type grow --transition-pos 0.925,0.977 --transition-duration 2"
+effect="--transition-bezier .43,1.19,1,.4 --transition-fps 60 --transition-type grow --transition-pos 0.925,0.977 --transition-duration 2"
 
 # Check if a marker file exists.
 if [ ! -f ~/.config/hypr/.initial_startup_done ]; then
