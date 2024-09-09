@@ -81,11 +81,6 @@ return {
     mason_lspconfig.setup_handlers({
       -- default handler for installed servers
       function(server_name)
-        -- FIXME: this is a hack to make sure there is no warning about deprecated tsserver
-        -- Will update once ts_ls is available
-        if server_name == "tsserver" then
-          server_name = "ts_ls"
-        end
         lspconfig[server_name].setup({
           capabilities = capabilities,
         })
@@ -145,7 +140,7 @@ return {
         })
       end,
       ["ts_ls"] = function()
-        lspconfig["tsserver"].setup({
+        lspconfig["ts_ls"].setup({
           capabilities = capabilities,
           on_attach = function(client, bufnr) end,
           init_options = {
