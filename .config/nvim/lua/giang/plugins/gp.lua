@@ -2,14 +2,26 @@ return {
   "robitx/gp.nvim",
   config = function()
     require("gp").setup({
-      openai_api_key = { "op", "read", "op://Personal/Chat-GPT-API-key/credential", "--no-newline" },
+      providers = {
+        openai = {
+          disable = false,
+          endpoint = "https://api.openai.com/v1/chat/completions",
+          secret = { "op", "read", "op://Personal/Chat-GPT-API-key/credential", "--no-newline" },
+        },
+        anthropic = {
+          disable = false,
+          endpoint = "https://api.anthropic.com/v1/messages",
+          secret = { "op", "read", "op://Personal/Claude-API-key/credential", "--no-newline" },
+        },
+      },
       agents = {
         {
           name = "ChatGPT4",
+          provider = "openai",
           chat = true,
           command = false,
           -- string with model name or table with model name and parameters
-          model = { model = "gpt-4o", temperature = 1.1, top_p = 1 },
+          model = { model = "gpt-4o", temperature = 1.0, top_p = 1 },
           -- system prompt (use this to specify the persona/role of the AI)
           system_prompt = "You are a general AI assistant.\n\n"
             .. "The user provided the additional info about how they would like you to respond:\n\n"
@@ -23,6 +35,7 @@ return {
         },
         {
           name = "CodeGPT4",
+          provider = "openai",
           chat = false,
           command = true,
           -- string with model name or table with model name and parameters
@@ -32,6 +45,25 @@ return {
             .. "Please AVOID COMMENTARY OUTSIDE OF THE SNIPPET RESPONSE.\n"
             .. "START AND END YOUR ANSWER WITH:\n\n```",
         },
+        {
+          provider = "anthropic",
+          name = "ChatClaude-3-5-Sonnet",
+          chat = true,
+          command = false,
+          -- string with model name or table with model name and parameters
+          model = { model = "claude-3-5-sonnet-20240620", temperature = 0.8, top_p = 1 },
+          -- system prompt (use this to specify the persona/role of the AI)
+          system_prompt = require("gp.defaults").chat_system_prompt,
+        },
+        {
+          provider = "anthropic",
+          name = "CodeClaude-3-5-Sonnet",
+          chat = false,
+          command = true,
+          -- string with model name or table with model name and parameters
+          model = { model = "claude-3-5-sonnet-20240620", temperature = 0.8, top_p = 1 },
+          system_prompt = require("gp.defaults").code_system_prompt,
+        },
       },
     })
 
@@ -40,5 +72,6 @@ return {
 
     -- shortcuts might be setup here (see Usage > Shortcuts in Readme)
     require("gp")._state.chat_agent = "ChatGPT4"
+    require("gp")._state.code_agent = "CodeGPT4"
   end,
 }
