@@ -25,9 +25,9 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 
 # Automatically attach tmux to "main" session
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
-  tmux a -t main || exec tmux new -s main && exit;
-fi
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
+#   tmux a -t main || exec tmux new -s main && exit;
+# fi
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
@@ -106,6 +106,7 @@ alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 alias pacman='pacman --color=auto'
+alias tmuxs='tmux a -t main || exec tmux new -s main'
 
 ### LS & TREE
 alias ll='ls -la'
