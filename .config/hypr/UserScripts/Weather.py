@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
-import subprocess
-from pyquery import PyQuery  # install using `pip install pyquery`
 import json
 import os
+import subprocess
+
+from pyquery import PyQuery  # install using `pip install pyquery`
 
 # original code https://gist.github.com/Surendrajat/ff3876fd2166dd86fb71180f4e9342d7
 # weather icons
@@ -24,7 +25,7 @@ weather_icons = {
 # to get your own location_id, go to https://weather.com & search your location.
 # once you choose your location, you can see the location_id in the URL(64 chars long hex string)
 # like this: https://weather.com/en-PH/weather/today/l/bca47d1099e762a012b9a139c36f30a0b1e647f69c0c4ac28b537e7ae9c1c200
-location_id = "bca47d1099e762a012b9a139c36f30a0b1e647f69c0c4ac28b537e7ae9c1c200"  # TODO
+location_id = "5217c2dc73b218e291cd6b14caaf944821ea545970bf0c6bc393af8b56d793bb"  # TODO
 
 # NOTE to change to deg F, change the URL to your preffered location after weather.com
 # Default is English-Philippines with Busan, South Korea as location_id
@@ -123,11 +124,13 @@ out_data = {
 }
 print(json.dumps(out_data))
 
-simple_weather =f"{icon}  {status}\n" + \
-                f"  {temp} ({temp_feel_text})\n" + \
-                f"{wind_text} \n" + \
-                f"{humidity_text} \n" + \
-                f"{visbility_text} AQI{air_quality_index}\n"
+simple_weather = (
+    f"{icon}  {status}\n"
+    + f"  {temp} ({temp_feel_text})\n"
+    + f"{wind_text} \n"
+    + f"{humidity_text} \n"
+    + f"{visbility_text} AQI{air_quality_index}\n"
+)
 
 try:
     with open(os.path.expanduser("~/.cache/.weather_cache"), "w") as file:

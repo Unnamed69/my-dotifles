@@ -1,6 +1,6 @@
 #!/bin/bash
 
-city=
+city=hochiminh
 cachedir=~/.cache/rbn
 cachefile=${0##*/}-$1
 

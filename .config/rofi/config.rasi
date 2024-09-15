@@ -5,10 +5,10 @@
 
 /* ---- Configuration ---- */
 configuration {
-	font: "Fira Code SemiBold 12";
+	font: "Operator Mono Lig 12";
 }
 
 element-text {
-    font:	"Fira Code SemiBold 14";
+    font:	"Operator Mono Lig 14";
 }
 

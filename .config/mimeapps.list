@@ -48,3 +48,4 @@ application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 text/csv=libreoffice-calc.desktop;
 video/mp2t=vlc.desktop;
+application/x-bittorrent=file_centipede.desktop;
