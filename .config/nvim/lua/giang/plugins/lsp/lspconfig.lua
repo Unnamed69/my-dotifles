@@ -5,6 +5,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim", opts = {} },
+    { "towolf/vim-helm", ft = "helm" },
   },
   config = function()
     -- import lspconfig plugin
@@ -146,6 +147,20 @@ return {
           init_options = {
             preferences = {
               disableSuggestions = true,
+            },
+          },
+        })
+      end,
+      ["yamlls"] = function()
+        lspconfig["yamlls"].setup({})
+      end,
+      ["helm_ls"] = function()
+        lspconfig["helm_ls"].setup({
+          settings = {
+            ["helm-ls"] = {
+              yamlls = {
+                path = "yaml-language-server",
+              },
             },
           },
         })
