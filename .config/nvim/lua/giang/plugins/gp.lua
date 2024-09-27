@@ -72,6 +72,6 @@ return {
 
     -- shortcuts might be setup here (see Usage > Shortcuts in Readme)
     require("gp")._state.chat_agent = "ChatGPT4"
-    require("gp")._state.code_agent = "CodeGPT4"
+    require("gp")._state.command_agent = "CodeGPT4"
   end,
 }

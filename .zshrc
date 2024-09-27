@@ -112,11 +112,8 @@ alias tmuxs='tmux a -t main || exec tmux new -s main'
 alias ll='ls -la'
 alias la='ls -A'
 alias l='ls -F'
-command -v lsd > /dev/null && alias ls='lsd --group-dirs first' && \
-	alias tree='lsd --tree'
-command -v colorls > /dev/null && alias ls='colorls --sd --gs' && \
-	alias tree='colorls --tree'
-
+command -v lsd > /dev/null && alias ls='eza -la --group-directories-first --icons=always' && \
+	alias tree='eza --tree --level=5 --icons=always'
 command -v bat > /dev/null && \
 	alias bat='bat --theme=ansi' && \
 	alias cat='bat' && \
@@ -129,7 +126,6 @@ command -v bpytop > /dev/null && alias top='bpytop'
 command -v df > /dev/null && alias df='duf'
 command -v ps > /dev/null && alias ps='procs'
 command -v curl > /dev/null && alias curl='curlie'
-alias obs='flatpak run com.obsproject.Studio'
 alias dockerrm='docker rm $(docker ps -qa)'
 alias dockerstop='docker stop $(docker ps -qa)'
 alias startmongodb='docker run -p 27017:27017 -v ~/mongodb-data:/data/db -d mongo'
@@ -143,6 +139,7 @@ alias gsyncbranch="git fetch --prune && git branch -vv | grep ': gone]' | awk '{
 alias ldocker='lazydocker'
 alias lpodman='DOCKER_HOST=unix:///run/user/1000/podman/podman.sock lazydocker'
 command -v docker-compose > /dev/null && alias docker compose='/usr/bin/docker compose'
+alias k='kubectl'
 dcuf() {
     docker-compose -f "$1" up -d
 }
@@ -163,6 +160,7 @@ export QT_IM_MODULE=fcitx
 export PATH=~/.asdf/shims:$PATH
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/FileCentipede/fileu
+export PATH=$PATH:$(go env GOPATH)/bin
 # -- Use fd instead of fzf --
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

@@ -47,5 +47,6 @@ application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 text/csv=libreoffice-calc.desktop;
-video/mp2t=vlc.desktop;
+video/mp2t=io.github.celluloid_player.Celluloid.desktop;vlc.desktop;
 application/x-bittorrent=file_centipede.desktop;
+text/vnd.trolltech.linguist=io.github.celluloid_player.Celluloid.desktop;

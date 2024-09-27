@@ -151,6 +151,9 @@ return {
           },
         })
       end,
+      ["gopls"] = function()
+        lspconfig["gopls"].setup({})
+      end,
       ["yamlls"] = function()
         lspconfig["yamlls"].setup({})
       end,
