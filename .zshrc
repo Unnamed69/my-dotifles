@@ -82,8 +82,8 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --color always $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'lsd --color always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --color=always $realpath'
 
 # Aliases
 alias c='clear'
@@ -99,7 +99,6 @@ command -v vim > /dev/null && alias vim='nvim'
 command -v neofetch > /dev/null && alias neofetch='fastfetch -c ~/.config/fastfetch/10.jsonc'
 
 ### Colorize commands
-alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -109,11 +108,11 @@ alias pacman='pacman --color=auto'
 alias tmuxs='tmux a -t main || exec tmux new -s main'
 
 ### LS & TREE
+alias ls='eza -la --group-directories-first --icons=always'
+alias tree='eza --tree --level=5 --icons=always'
 alias ll='ls -la'
 alias la='ls -A'
 alias l='ls -F'
-command -v lsd > /dev/null && alias ls='eza -la --group-directories-first --icons=always' && \
-	alias tree='eza --tree --level=5 --icons=always'
 command -v bat > /dev/null && \
 	alias bat='bat --theme=ansi' && \
 	alias cat='bat' && \
