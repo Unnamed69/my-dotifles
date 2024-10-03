@@ -139,6 +139,8 @@ alias ldocker='lazydocker'
 alias lpodman='DOCKER_HOST=unix:///run/user/1000/podman/podman.sock lazydocker'
 command -v docker-compose > /dev/null && alias docker compose='/usr/bin/docker compose'
 alias k='kubectl'
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 dcuf() {
     docker-compose -f "$1" up -d
 }
