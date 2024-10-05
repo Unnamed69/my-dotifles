@@ -179,12 +179,12 @@ _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
   }
 # --- setup fzf theme ---
-fg="#CBE0F0"
-bg="#011628"
-bg_highlight="#143652"
+fg="#C0CAF5"
+bg="#1A1B26"
+bg_highlight="#24283B"
 purple="#B388FF"
-blue="#06BCE4"
-cyan="#2CF9ED"
+blue="#7AA2F7"
+cyan="#449DAB"
 # --- setup fzf previews ---
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
