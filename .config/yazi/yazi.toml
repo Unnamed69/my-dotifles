@@ -66,6 +66,9 @@ rules = [
 	{ mime = "application/json", use = [ "edit", "reveal" ] },
 	{ mime = "*/javascript",     use = [ "edit", "reveal" ] },
 
+  # Special rule for .ts video or .ts typescript file
+  { name = "*.ts", use = [ "edit", "play", "reveal" ] },
+
 	{ mime = "*", use = [ "open", "reveal" ] },
 ]
 
