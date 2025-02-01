@@ -1,0 +1,179 @@
+c
+clear
+ll
+ls
+ls -la
+c
+clear
+exit
+eza
+eza | table
+eza -la 
+eza -la | detech column
+eza -la | detect column
+eza -la | detect columns
+exit
+yazi
+ps
+ps | where name like hyprpanel
+ps | where name like sww
+ps | where name like sww | get pid | kill -i
+ps | where name like sww | get pid | kill -9
+ps | where name like sww | get pid | kill 
+ps | where name like sww | get pid
+kill 1731
+nohup hyprpanel &
+cd
+exit
+ps 
+clear
+cd
+which cd
+c
+cd
+clear
+yay -Rns agsv1
+c
+clear
+ags -h
+ags list
+ags quit hyprpanel
+ags quit -i hyprpanel
+nohup hyprpanel &
+ags quit -i hyprpanel
+ags list
+exit
+mkdir ($nu.data-dir | path join "vendor/autoload")
+echo $nu.data-dir
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+cd .local/share/nushell/
+ls -la
+cd vendor/autoload
+ls -la
+nvim starship.nu
+cd ~/.config/nushell
+source config.nu
+clear
+exit
+c
+starship preset pastel-powerline -o ~/.config/starship.toml
+cd Hyprpanel
+cd HyprPanel/
+clear
+cd
+starship preset jetpack -o ~/.config/starship.toml
+cd HyprPanel/
+starship preset pastel-powerline -o ~/.config/starship.toml
+$nu.env-path
+cd $nu.env-path
+nvim $nu.env-path
+nvim $nu.config-path
+exit
+clear
+cd
+cd Programing/easier-be/
+cd
+cd easier
+z easier
+z
+zoxide init --cmd cd
+zoxide init --cmd cd nu
+zoxide init --cmd cd nushell
+c
+cd easier
+exit
+cd easier
+z easier
+cd
+zoxide init --cmd cd nushell
+source ~/.zoxide.nu
+cd easier
+nvim $nu.env-path
+exit
+cd easier
+cd
+yay -S carapace-bin
+$nu.env-path
+nvim $nu.env-path
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+$nu.config-path
+nvim $nu.config-path
+exit
+clear
+docker container ls 
+docker container ls | detect columns
+docker container ls | detect columns | get command
+$env.EDITOR
+nvim $nu.env-path
+source $nu.env-path
+source $nu.config-path
+nu config
+config nu
+alias ll = ls -la
+ll
+c
+alias c = clear
+c
+exit
+ll
+config nu
+lll
+ll
+ls -l
+ls -la
+c
+exit
+clear
+config nu
+source $nu.config-path
+config nu
+source $nu.config-path
+docker ps -qa
+docker rm $(docker ps -qa)
+ls -h
+aws -h
+aws 
+aws config
+k -h
+kubectl -h
+clear
+config nu
+c
+source $nu.config-path
+which vim 
+which vim | empty?
+which vim | empty
+empty
+which vim | is-empty
+config nu
+source $nu.config-path
+which vim | is-empty | not
+which vim | is-empty
+config nu
+source $nu.config-path
+config nu
+source $nu.config-path
+ls -A
+config nu
+source $nu.config-path
+nu config
+config nu
+source $nu.config-path
+config nu
+source $nu.config-path
+config nu
+source $nu.config-path
+c
+ll
+oll
+c
+ll
+c
+top
+c
+btop
+ps
+ps -aux
+c
+yadm status
