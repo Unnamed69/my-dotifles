@@ -177,3 +177,232 @@ ps
 ps -aux
 c
 yadm status
+yadm add .config/nushell 
+yadm commit -m "added nushell config"
+yadm push
+c
+help commands | explore
+yazi
+$env.config | table -e | bat -p
+$env.config
+$env.config | table -e
+$env.config | bat -p
+config nu --doc | nu-highlight | bat
+c
+config nu
+source $nu.config-path
+nupm
+cd .config/nushell/
+git clone https://github.com/nushell/nupm.git
+cd nupm/
+vi README.md
+ll
+cd ..
+cd nupm/
+nupm install --force --path
+nupm install --force --path .
+use nupm/
+nupm install --force --path .
+cd ..
+vi README.md
+config nu
+source $nu.config-path
+has_command nvim
+which vi
+which ll
+config nu
+source $nu.config-path
+which vi
+config nu
+source $nu.config-path
+which v
+v
+config nu
+source $nu.config-path
+which v
+fastfetch
+neofetch
+config nu
+source $nu.config-path
+neofetch
+which neofetch
+neofetch
+source $nu.config-path
+config nu
+source $nu.config-path
+neofetch
+config nu
+source $nu.config-path
+neofetch
+config nu
+source $nu.config-path
+neofetch
+c
+config nu
+cp -v
+help cp
+source $nu.config-path
+help cp
+help mv
+help rm
+mkdir test
+source $nu.config-path
+help cp
+cp -v
+which cp
+source $nu.config-path
+help rm
+ll
+rm test
+source $nu.config-path
+help cp
+exit
+help cp
+which mv
+help mv
+help ls
+help rm
+source $nu.config-path
+exit
+help cp
+source $nu.config-path
+exit
+help cp
+help cp-builtin
+cp -h
+rm -h
+rm test
+rm -rf test
+rm -rfI test
+source $nu.config-path
+exit
+mkdir test
+rm test
+source $nu.config-path
+c
+exit
+which curl
+which curlie
+source $nu.config-path
+which curl
+curl
+which curl
+curlie
+c
+nupm
+cd nupm
+nupm
+use nupm/nupm<\n>nupm install nupm --force --path
+use nupm/
+nupm install --force --path .
+nupm
+cd ..
+git clone https://github.com/cptpiepmatz/nu-plugin-highlight.git
+nupm install --path nu-plugin-highlight/
+c
+cargo install nu_plugin_highlight
+which nu_plugin_highlight
+plugin add path/to/the/plugin/binary
+which nu_plugin_highlight | plugin add 
+which nu_plugin_highlight | plugin add ($in.path)
+which nu_plugin_highlight | get path
+which nu_plugin_highlight | get path | plugin add
+which nu_plugin_highlight | select path
+which nu_plugin_highlight | select path | plugin add ($1)
+which nu_plugin_highlight | select path | plugin add $in
+date now
+1..10
+which nu_plugin_highlight | select path |first| plugin add $in
+which nu_plugin_highlight | select path |first|into string| plugin add $in
+which nu_plugin_highlight | select path
+which nu_plugin_highlight | select path | do { $in | describe }
+1..10 | each {$in * 2}
+1..10 | each {|value| $value * 2}
+ls | do {|file| $file.name | str upcase}
+ls | each {|file| $file.name | str upcase}
+which nu_plugin_highlight | select path | plugin add $in
+which nu_plugin_highlight | select path | into string
+which nu_plugin_highlight | get path | into string
+which nu_plugin_highlight | get path
+which nu_plugin_highlight | get path | into string
+which nu_plugin_highlight | get path | into string | plugin add
+which nu_plugin_highlight | get path | into string | plugin add $in
+exit
+help plugin add
+which nu_plugin_highlight | get path | first | describe
+which nu_plugin_highlight | get path | first | plugin add $1
+which nu_plugin_highlight | get path | first | plugin add $in
+plugin use highlight
+exit
+kjhkjhjkhjk 
+help commands | where command_type == "plugin"
+c
+ifconfig
+ifconfig | explore
+ifconfig
+ifconfig | detect columns
+c
+ifconfig
+netstat
+c
+wavemon 
+sys net
+sys cpu 
+sys host 
+sys temp 
+sys
+sudo wavemon 
+http get https://fake-coffee-api.vercel.app/api
+curl -e https://fake-coffee-api.vercel.app/api
+which curl
+curl https://fake-coffee-api.vercel.app/api
+curl -X POST https://fake-coffee-api.vercel.app/api
+curl -X GET https://fake-coffee-api.vercel.app/api
+curl https://fake-coffee-api.vercel.app/api
+config nu
+v $nu.env-path
+config nu
+source $nu.config-path
+source $nu.env-path
+source $nu.config-path
+source $nu.env-path
+yay -Qs oh-my-posh
+yay -Ss oh-my-posh
+yay -S oh-my-posh
+c
+mkdir ~/.config/oh-my-posh
+cd oh-my-posh
+cd .config/oh-my-posh/
+which oh-my-posh 
+cd
+cd oh-my-posh
+mkdir themes
+cd themes/
+cd nvim
+v .
+v powerlevel10k_rainbow.omp.json
+v powerlevel10k_rainbow.omp.json 
+v $nu.env-path
+config nu
+exit
+cd easier
+cd mms
+exit
+cd mms
+exit
+cd mms
+exit
+cd mms
+exit
+cd mms
+exit
+cd mms
+cd ..
+ll
+exit
+cd mms
+exit
+cd mms
+v powerlevel10k_rainbow.omp.json 
+cd ..
+yadm status

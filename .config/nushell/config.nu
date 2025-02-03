@@ -16,18 +16,15 @@
 #
 # You can remove these comments if you want or leave
 # them for future reference.
-source ~/.zoxide.nu
-source ~/.cache/carapace/init.nu
 
 # Basic aliases
 alias c = clear
-alias cp = ^cp -v
-alias rm = ^rm -I
-alias mv = ^mv -iv
 alias ln = ^ln -sriv
 alias xclip = ^xclip -selection c
 alias pip = pip3
 alias python = python3
+alias v = nvim
+alias curl = ^curlie
 
 # Check commands existence and create conditional aliases
 def has_command [cmd: string] {
@@ -48,13 +45,12 @@ def help_text [cmd: string] {
     run-external $cmd --help | bat --language=help --style=plain
 }
 
-if (has_command vim) {
-    alias vi = nvim
-    alias vim = nvim
-}
-
-if (has_command neofetch) {
-    alias neofetch = ^fastfetch -c ~/.config/fastfetch/10.jsonc
+def neofetch [] {
+    if (has_command fastfetch) {
+        fastfetch
+    } else {
+        neofetch
+    }
 }
 
 # Colorize commands
@@ -69,16 +65,21 @@ alias pacman = ^pacman --color=auto
 alias ll = ls -l
 alias la = ls -la
 alias l = ls
-alias ols = ^eza -la --group-directories-first --icons=always
+alias core-ls = ^eza -la --group-directories-first --icons=always
 alias tree = ^eza --tree --level=5 --icons=always
-alias oll = ols -la
-alias ola = ols -A
-alias ol = ols -F
+alias core-ll = core-ls -la
+alias core-la = core-ls -A
+alias core-l = core-ls -F
 alias cat = bat
 alias less = bat
 
-if (has_command bpytop) { alias top = bpytop }
-if (has_command curl) { alias curl = curlie }
+def btop [] {
+    if (has_command bpytop) {
+        bpytop
+    } else {
+        top
+    }
+}
 
 # Docker aliases
 def dockerrm [] {
@@ -130,3 +131,18 @@ def lpodman [] {
 alias fmake = fzf-make
 alias k = kubectl
 
+# env
+$env.config.edit_mode = "vi"
+
+source ~/.zoxide.nu
+source ~/.cache/carapace/init.nu
+source ~/.oh-my-posh.nu
+
+let shims_dir = (
+  if ( $env | get --ignore-errors ASDF_DATA_DIR | is-empty ) {
+    $env.HOME | path join '.asdf'
+  } else {
+    $env.ASDF_DATA_DIR
+  } | path join 'shims'
+)
+$env.PATH = ( $env.PATH | split row (char esep) | where { |p| $p != $shims_dir } | prepend $shims_dir )

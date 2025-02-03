@@ -16,6 +16,7 @@
 #
 # You can remove these comments if you want or leave
 # them for future reference.
-zoxide init --cmd cd nushell | save -f ~/.zoxide.nu
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 $env.EDITOR = 'nvim'
+zoxide init --cmd cd nushell | save -f ~/.zoxide.nu
+oh-my-posh init nu --config ~/.config/oh-my-posh/themes/powerlevel10k_rainbow.omp.json
