@@ -1,14 +1,14 @@
 return {
   "petertriho/nvim-scrollbar",
-  requires = { "folke/tokyonight.nvim", "lewis6991/gitsigns.nvim", "kevinhwang91/nvim-hlslens" },
+  requires = { "catppuccin/nvim", "lewis6991/gitsigns.nvim", "kevinhwang91/nvim-hlslens" },
   config = function()
-    local colors = require("tokyonight.colors").setup()
+    local colors = require("catppuccin.palettes").get_palette("mocha")
     require("gitsigns").setup()
     require("scrollbar.handlers.gitsigns").setup()
 
     require("scrollbar").setup({
       handle = {
-        color = colors.bg_highlight,
+        color = colors.overlay1,
       },
       marks = {
         Search = { color = colors.orange },
@@ -17,9 +17,9 @@ return {
         Info = { color = colors.info },
         Hint = { color = colors.hint },
         Misc = { color = colors.purple },
-        GitAdd = { color = colors.git.add },
-        GitChange = { color = colors.git.change },
-        GitDelete = { color = colors.git.delete },
+        GitAdd = { color = colors.green },
+        GitChange = { color = colors.yellow },
+        GitDelete = { color = colors.red },
       },
     })
   end,
